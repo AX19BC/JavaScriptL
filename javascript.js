@@ -26,11 +26,11 @@ function playerRound (playerSele, computerSelection){
     else if (playerSele === "ROCK" && computerSelection === "PAPER" ||
             playerSele === "SCISSORS" && computerSelection === "ROCK" ||
             playerSele === "PAPER" && computerSelection === "SCISSORS"){
-        console.log("Paper wins. You are loser of this round!");
+        console.log("You are loser of this round!");
         computer++;
     }
     else {
-        console.log("Rock wins. You are winner of this round!");
+        console.log("You are winner of this round!");
         player++;
     }
 
@@ -53,8 +53,10 @@ function toUpperCase (playerSelection) {
 
 // tha main game. It last 5 round // 
 function game () {
+
         var player = 0;
         var computer = 0;
+
     for (let i = 0; i < 5; i++){
         
         const computerSelection = getComputerChoice();
