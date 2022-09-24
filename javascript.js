@@ -1,7 +1,8 @@
-// function computer choise is saive din to const computerSelection //
-const computerSelection = getComputerChoice();
-game ();
-
+// declaration //
+        var player = 0;
+        var computer = 0;
+        let buttons = document.querySelectorAll("button");
+        let playerSelection = "";
 // random computer pick //
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random() * 3)
@@ -16,16 +17,16 @@ function getComputerChoice () {
 }
 
 // looking who wins and count each win --> each time return winner//
-function playerRound (playerSele, computerSelection){
+function playerRound (playerSelection, computerSelection){
     var player = 0;
     var computer = 0;
 
-    if (playerSele === computerSelection ){
+    if (playerSelection === computerSelection ){
         console.log("Draw");
     }
-    else if (playerSele === "ROCK" && computerSelection === "PAPER" ||
-            playerSele === "SCISSORS" && computerSelection === "ROCK" ||
-            playerSele === "PAPER" && computerSelection === "SCISSORS"){
+    else if (playerSelection === "ROCK" && computerSelection === "PAPER" ||
+    playerSelection === "SCISSORS" && computerSelection === "ROCK" ||
+    playerSelection === "PAPER" && computerSelection === "SCISSORS"){
         console.log("You are loser of this round!");
         computer++;
     }
@@ -45,40 +46,7 @@ function playerRound (playerSele, computerSelection){
     }
 }
 
-// player selection convert to upper case //
-function toUpperCase (playerSelection) {
-    return playerSelection.toUpperCase();
-}
-
-
-// tha main game. It last 5 round // 
-function game () {
-
-        var player = 0;
-        var computer = 0;
-
-    for (let i = 0; i < 5; i++){
-        
-        const computerSelection = getComputerChoice();
-        const playerSelection = prompt("Insert your chooise");
-        const playerSele = toUpperCase(playerSelection)
-       
-        // every round count player score and add +1//
-    switch (playerRound(playerSele,computerSelection)){
-        case 0:
-            break;
-        case 1:
-            player++;
-            break;
-        case 2:
-            computer++;
-            break;
-    }
-    }
-//end of loop//
-        
-
-// looks who have bigger score and declare a winner //
+function declareWinner(){
     if (player > computer){
         console.log("YOU win this game Congratulation!");
     }
@@ -90,7 +58,42 @@ function game () {
     else if (computer === player){
         console.log("It's a draw try again and win this PC.");
     }
+
 }
+
+// tha main game. It last 5 round // 
+        
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                let player = 0;
+                let computer = 0;
+              const computerSelection = getComputerChoice();
+              const img = button.querySelector("img");
+              playerSelection = img.alt.toUpperCase();
+          
+              switch (playerRound(playerSelection,computerSelection)){
+                case 0:
+                    break;
+                case 1:
+                    player++;
+                    break;
+                case 2:
+                    computer++;
+                    break;
+              }
+
+              if (player === 5 || computer === 5) {
+                declareWinner();
+              }
+          
+            });
+            
+          });
+
+        
+
+        
+
 
 
 
