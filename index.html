@@ -12,7 +12,7 @@
         
     </head>
     <body>
-        <h1>Welcome to our game!</h1>
+        <h1 class="fancy">Welcome to our game!</h1>
         <div class="firstContainer">
             <div class="player">
                 <div class="playerContainer">
@@ -31,17 +31,23 @@
 
         <div class="secondContainer">
             <div class="playerChoice">
-                <button class="rock">
+                <button class="button">
                     <img class="pick" src="rock.png" alt="rock">
                 </button>
-                <button class="paper">
+                <button class="button">
                     <img class="pick" src="paper.png" alt="paper">
                 </button>
-                <button class="scissors">
+                <button class="button">
                     <img class="pick" src="scissor.png" alt="scissors">
                 </button>
             </div>
-            <div class="result"><h3>RESULT</h3></div>
+            <div class="result">
+                <h3>RESULT</h3>
+                <div class="scoore" >
+                    <h1 class="playerScoore">0</h1>
+                    <h1 class="computerScoore">0</h1>
+                </div>
+            </div>
             <div class="computerChoice">
                 <button class="rock2" >
                     <img class="pick" src="rock.png" alt="rock">
@@ -53,6 +59,9 @@
                     <img class= "pick" src="scissor.png" alt="scissor">
                 </button>
             </div>
+        </div>
+        <div>
+            <h1 class="winnerOfRound">Choice  ROCK, PAPER or SCISSORS!</h1>
         </div>
         <script src=javascript.js defer></script>
     </body>

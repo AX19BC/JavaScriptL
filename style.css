@@ -1,6 +1,7 @@
 * {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #800000;
+    
 }
 
 html{
@@ -60,7 +61,19 @@ html{
     font-weight: bold;
     font-size: 60px;
     text-shadow:0 0 3.5rem #ff1a1a;
+    transition: all 2s ease;
+    transition: transform 1s;
+    
  }
+ span{
+    opacity: 0;
+    transition: all 0.4s ease;
+ }
+
+ span.fade{
+    opacity: 1;
+ }
+
 
  h2{
     font-size: 100px;
@@ -71,6 +84,7 @@ html{
  h3{
     font-size: 30px;
     text-shadow:0 0 2rem #ff1a1a;
+    
  }
 
  img{
@@ -128,4 +142,27 @@ html{
  .playerChoice, .computerChoice {
     gap: 25px;
  }
+.scoore{
+    display: flex;
+    justify-content: space-between;
+}
  
+.result{
+    display: block;
+}
+
+.winnerOfRound {
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.vs{
+    animation: fade-inout 2s infinite alternate;
+}
+
+@-webkit-keyframes fade-inout{
+    0%{ opacity: 1;}
+    100%{opacity: 0;}
+    
+}
