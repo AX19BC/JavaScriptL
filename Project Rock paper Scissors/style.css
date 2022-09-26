@@ -104,7 +104,16 @@ html{
     width: 350px;
     box-shadow: 0 0 2rem #ff1a1a;
     border-radius: 40px;
+    transition: 20s;
  }
+ .computerContainer:hover {
+    margin-left: 40px;
+    width: 350px;
+    box-shadow: 0 0 2rem #ff1a1a;
+    border-radius: 40px;
+    transform: translateX(-50%);
+ }
+
 
  .player{
     background-color: white;
